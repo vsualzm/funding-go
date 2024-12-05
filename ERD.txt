@@ -1,0 +1,42 @@
+ERD 
+- users
+1. name int
+2. occupation varchar
+3. email varchar
+4. password_hash varchar
+5. avatar_file_name varchar
+6. role varchar
+7. token varchar
+8. created_at datetime
+9. update_at datetime
+
+- campaigns
+1. id : int 
+2. user_id int
+3. name : varhcar
+4. short_description : varchar
+5. goal_amount : int
+6. current_amount : int
+7. perks :text
+8. backer_count: int 
+9. slug :varchar
+10. created_at : datetime
+11. update_at : datetime
+
+- campaigns image
+1. id :int
+2. campaign_id : int 
+3. file_name : varchar
+4. is_primary : boolean (tinyint)
+5. created_at : datetime
+6. update_at : datime  
+
+- Transaction
+1. id : int 
+2. user_id : int 
+3. campaign_id : int 
+4. amount : int 
+5. code : varchar (kode uniq)
+6. created_at : time 
+7. update_at : time 
+8. status : varchar
