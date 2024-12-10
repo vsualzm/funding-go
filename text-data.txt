@@ -1,0 +1,66 @@
+	// cheking validatiion token
+	// token, err := authService.ValidateToken("eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxOH0.cJc_Hl-3Fck35SPCgKaICpMIN9H45hJSbt9qQ75c4Lw")
+
+	// if err != nil {
+	// 	fmt.Println("ERROR")
+	// }
+
+	// if token.Valid {
+	// 	fmt.Println("token valid")
+	// } else {
+	// 	fmt.Println("token invalid")
+	// }
+
+
+    // authService := auth.NewService()
+
+	// cekToken, err := authService.GenerateToken(2000)
+
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+
+	// // nge check generate token
+	// fmt.Println("hasil dari token : ", cekToken)
+
+
+
+    // userInput := user.RegisterUserInput{}
+	// userInput.Name = "test simpan dari service"
+	// userInput.Occupation = "informa"
+	// userInput.Email = "tX6oJ@example.com"
+	// userInput.Password = "colokan password"
+
+	// userService.RegisterUser(userInput)
+
+	// user := user.User{
+	// 	Name:         "Visual",
+	// 	Occupation:   "Programmer",
+	// 	Email:        "q4qK1@example.com",
+	// 	PasswordHash: "password",
+	// }
+
+	// cheking save function
+	// userRepository.Save(user)
+
+	// fmt.Println("Connection to Database Successful")
+
+	// var user []user.User
+
+	// fmt.Println(len(user))
+
+	// DB.Find(&user)
+
+	// fmt.Println(len(user))
+
+	// for _, u := range user {
+	// 	fmt.Println(u.Name)
+	// 	fmt.Println(u.Email)
+	// 	fmt.Println(u.PasswordHash)
+	// 	fmt.Println("================")
+	// }
+
+	// router := gin.Default()
+	// // router.GET("/users", Handler)
+
+	// router.Run(":8000")

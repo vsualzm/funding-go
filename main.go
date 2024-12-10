@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/vsualzm/funding-go/auth"
 	"github.com/vsualzm/funding-go/handler"
 	"github.com/vsualzm/funding-go/user"
 	"gorm.io/driver/postgres"
@@ -24,8 +25,9 @@ func main() {
 
 	userRepository := user.NewRepository(db)
 	userService := user.NewService(userRepository)
+	authService := auth.NewService()
 
-	userHandler := handler.NewUserHandler(userService)
+	userHandler := handler.NewUserHandler(userService, authService)
 
 	// api for gin
 
@@ -40,46 +42,6 @@ func main() {
 
 	// nge checking save avatar
 	router.Run(":8080")
-
-	// userInput := user.RegisterUserInput{}
-	// userInput.Name = "test simpan dari service"
-	// userInput.Occupation = "informa"
-	// userInput.Email = "tX6oJ@example.com"
-	// userInput.Password = "colokan password"
-
-	// userService.RegisterUser(userInput)
-
-	// user := user.User{
-	// 	Name:         "Visual",
-	// 	Occupation:   "Programmer",
-	// 	Email:        "q4qK1@example.com",
-	// 	PasswordHash: "password",
-	// }
-
-	// cheking save function
-	// userRepository.Save(user)
-
-	// fmt.Println("Connection to Database Successful")
-
-	// var user []user.User
-
-	// fmt.Println(len(user))
-
-	// DB.Find(&user)
-
-	// fmt.Println(len(user))
-
-	// for _, u := range user {
-	// 	fmt.Println(u.Name)
-	// 	fmt.Println(u.Email)
-	// 	fmt.Println(u.PasswordHash)
-	// 	fmt.Println("================")
-	// }
-
-	// router := gin.Default()
-	// // router.GET("/users", Handler)
-
-	// router.Run(":8000")
 
 }
 
