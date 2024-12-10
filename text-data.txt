@@ -64,3 +64,26 @@
 	// // router.GET("/users", Handler)
 
 	// router.Run(":8000")
+
+
+    // func Handler(c *gin.Context) {
+
+    // 	dsn := "host=localhost user=postgres password=1234 dbname=startup_db port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+    // 	DB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+
+    // 	if err != nil {
+    // 		panic("failed to connect database")
+    // 	}
+
+    // 	// get data from database
+    // 	var users []user.User
+    // 	DB.Find(&users)
+    // 	c.JSON(200, users)
+
+    // }
+
+    // input
+    // handler menangkap inputan dari user mapping ke strcut
+    // service mapping ke strcut
+    // repository menyimpan ke db
+    // db
