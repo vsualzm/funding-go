@@ -87,3 +87,30 @@
     // service mapping ke strcut
     // repository menyimpan ke db
     // db
+
+
+
+// cara membuat pemanggilan campaign di main dengan campaign repository
+	// buat dahulu masukan nya
+
+	dataCampaign := campaign.Campaign{
+		Name:             "Campaign 1",
+		ShortDescription: "Campaign 1",
+		Description:      "Campaign 1",
+		Perks:            "Campaign 1",
+		BackerCount:      0,
+		GoalAmount:       1000000,
+		Slug:             "campaign-1",
+		CurrentAmount:    0,
+		UserID:           1,
+	}
+
+	// create to db
+	resultCampaign, err := campaignRepository.CreateCampaign(dataCampaign)
+
+	if err != nil {
+		fmt.Println("result campaign error : ", err)
+		return
+	}
+
+	fmt.Println("result campaign : ", resultCampaign)

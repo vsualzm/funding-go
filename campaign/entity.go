@@ -15,13 +15,14 @@ type Campaign struct {
 	CurrentAmount    int
 	CreatedAt        time.Time
 	UpdatedAt        time.Time
+	CampaignImages   []CampaignImage
 }
 
 type CampaignImage struct {
 	ID         int
 	CampaignID int
 	FileName   string
-	IsPrimary  bool
+	IsPrimary  int
 	CreatedAt  time.Time
 	UpdatedAt  time.Time
 }

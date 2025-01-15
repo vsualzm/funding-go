@@ -7,7 +7,6 @@ import (
 )
 
 // decode -> payload -> signature
-
 type Service interface {
 	GenerateToken(userID int) (string, error)
 	ValidateToken(token string) (*jwt.Token, error)
@@ -21,7 +20,7 @@ func NewService() *JwtService {
 }
 
 // ini seharusnya di simpan di env
-var SECRET_KREY = []byte("RAHASIA")
+var SECRET_KREY = []byte("S3CR3T_K3Y_JWT")
 
 // generate token
 func (s *JwtService) GenerateToken(userID int) (string, error) {
@@ -33,6 +32,7 @@ func (s *JwtService) GenerateToken(userID int) (string, error) {
 	// token berubah menjadi jwt.SigningMethodHS256
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claim)
 
+	// signature seperti ttd yang tidak bisa diubah
 	signerToken, err := token.SignedString(SECRET_KREY)
 	if err != nil {
 		return signerToken, err

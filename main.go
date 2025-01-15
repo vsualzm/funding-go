@@ -1,12 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"strings"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"github.com/vsualzm/funding-go/auth"
+	"github.com/vsualzm/funding-go/campaign"
 	"github.com/vsualzm/funding-go/handler"
 	"github.com/vsualzm/funding-go/helper"
 	"github.com/vsualzm/funding-go/user"
@@ -29,9 +31,25 @@ func main() {
 	}
 
 	userRepository := user.NewRepository(db)
+
+	// check package campaigns
+	campaignRepository := campaign.NewRepository(db)
+
+	campaigns, err := campaignRepository.FindByUserID(1)
+
+	if err != nil {
+		panic(err)
+	}
+
+	for _, campaign := range campaigns {
+
+		fmt.Println(campaign.Name)
+		fmt.Println(campaign.UserID)
+		fmt.Println(campaign.Slug)
+	}
+
 	userService := user.NewService(userRepository)
 	authService := auth.NewService()
-
 	userHandler := handler.NewUserHandler(userService, authService)
 
 	// api for gin
